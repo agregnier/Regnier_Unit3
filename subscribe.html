@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Adam's Cheeseburger Discussion - Subscribe</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 5rem;
+        }
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <link href="assets/css/unit2.css" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Cheeseburger Bar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="history.html">History <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="sauces.html">Sauces</a>
+                    <a class="dropdown-item" href="veggies.html">Vegetables</a>
+                    <a class="dropdown-item" href="buns.html">Buns</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="subscribe.html">Subscribe for more!</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main">
+
+    <div class="container jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Want our hourly Cheeseburger newsletter?</h1>
+            <div class="container">
+                <h2>Then click here!!!</h2>
+                <button id="myBtn">Open Me!</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Actually, just scroll down below and fill out that form</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- START THE FEATURETTES -->
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="https://insightbyseymour.files.wordpress.com/2015/04/people-celebrating-1202x500.jpg" class="card-img-top" alt="totallyrealcelebration" width="75">
+                <div class="card-body">
+                    <p class="card-text">This is an actual, non-prompted, totally real photo of people subscribing to my newsletter!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://c8.alamy.com/comp/FKG3A3/happy-people-celebrating-the-holiday-with-champagne-FKG3A3.jpg" class="card-img-top" alt="totallyrealcelebration2" width="75">
+                <div class="card-body">
+                    <p class="card-text">This is an actual party thrown by your friends when you subscribe! (Definitely not a stock photo... that would be weird...)</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <img src="https://res.cloudinary.com/highereducation/image/upload/f_auto,fl_lossy,q_auto/v1/OnlineCollegeCourses.com/media/textfacts1.jpg" class="card-img-top" alt="totallyrealcelebration3" width="75">
+                <div class="card-body">
+                    <p class="card-text">People receiving photos of me eating a cheeseburger!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container form">
+        <h1 style="text-align: left"> Subscribe here! </h1>
+        <form name="RegForm" id="contact" action="https://formspree.io/xgevpgop" method="POST">
+
+            <p>Name: <input id="Name" type="text" size=65 name="Name" > </p><br>
+            <p>Address: <input id="Address" type="text" size=65 name="Address" >  </p><br>
+            <p>E-mail: <input id="Email"type="text" size=65 name="Email" >  </p><br>
+            <p>Phone: <input id="Phone" type="text" size=65 name="Phone" > </p><br>
+
+            <button type="submit">Subscribe</button>
+            <p><input type="reset" value="Reset" name="Reset">
+            </p>
+        </form>
+        <div class="container alerts">
+            <div class="alert alert-success d-none" id="success-alert" role="alert">
+                Congratulations on the best decision you have ever made!
+            </div>
+            <div class="alert alert-warning d-none" id="warning-alert" role="alert">
+                There was an issue submitting your form.
+            </div>
+            <div class="alert alert-danger d-none" id="danger-alert" role="alert">
+                You haven't completed all of the forms correctly! Go back and recheck what you entered.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>2019&copy; "Posted by: Adam Regnier" <br>Contact information if you wish to speak more about burgers: <a href="mailto:aregnier1@luc.edu">
+            aregnier1@luc.edu</a>&middot; <br> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+
+
+
+</main>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
