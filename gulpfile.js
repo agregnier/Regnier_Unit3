@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 function css() {
-    return src('assets/css/styles.scss')
+    return src('assets/css/style.scss')
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(minifyCSS())
@@ -28,3 +28,7 @@ async function js() {
         })
     })
 }
+
+exports.css = css;
+exports.js = js;
+exports.default = parallel(css, js);

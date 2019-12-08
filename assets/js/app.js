@@ -23,28 +23,17 @@
                 //Start for JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
                 var formEl = document.getElementById('contact');
 
-                // 1. Setup the request
-                // ================================
-                // 1.1 Headers
                 var headers = new Headers();
                 // Tell the server we want JSON back
                 headers.set('Accept', 'application/json');
 
-                // 1.2 Form Data
-                // We need to properly format the submitted fields.
-                // Here we will use the same format the browser submits POST forms.
-                // You could use a different format, depending on your server, such
-                // as JSON or XML.
                 var formData = new FormData();
                 for (var i = 0; i < formEl.length; ++i) {
                     formData.append(formEl[i].name, formEl[i].value);
                 }
 
-                // This is for the purpose of this demo using jsFiddle AJAX Request endpoint
                 formData.append('json', JSON.stringify({example: 'return value'}));
 
-                // 2. Make the request
-                // ================================
                 var url = 'https://formspree.io/xgevpgop';
 
                 var fetchOptions = {
@@ -55,8 +44,6 @@
 
                 var responsePromise = fetch(url, fetchOptions);
 
-                // 3. Use the response
-                // ================================
                 responsePromise
                     .then(function (response) {
                         if (response.status >= 200 && response.status < 300) {
@@ -67,19 +54,13 @@
                             document.getElementById("success-alert").classList.add("d-none");
                         }
                     });
-
-                //End to JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
-
             }
-
-        });  //End of method
+        });
     } catch (e) {
         console.log("There was an error");
     }
 
-// }
-// const moment = require('moment');
-const moment = assets/js/moment.js;
+const moment = require('moment');
 const pageViewsKeyName = "pageViews";
 
 function addPageView() {
@@ -100,9 +81,6 @@ function addPageView() {
     localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
 }
 
-// //===============  Load the internal storage =========================
-
-//Attempt 1
 function listPageViews(array) {
     let table = document.getElementById("websiteLogsTable");
     let tableBody = document.getElementById("logTableBody");
@@ -121,7 +99,6 @@ function listPageViews(array) {
         tableBody.appendChild(tr);
     });
 }
-// //============== End of load internal storage =======================
 
 document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
@@ -138,4 +115,5 @@ table_button.addEventListener("click", function () {
     localStorage.clear();
     window.location.reload();
     window.alert("It is like you were never here...");
+    console.log("cache cleared")
 });
