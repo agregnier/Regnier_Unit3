@@ -78,7 +78,7 @@ function myAppOnload(e) {
     }
 
 }
-const moment = require(moment);
+const moment = require('moment');
 const pageViewsKeyName = "pageViews";
 
 function addPageView() {
