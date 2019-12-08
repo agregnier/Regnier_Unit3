@@ -1,5 +1,5 @@
-function myAppOnload(e) {
-    $('.alert').alert();
+// function myAppOnload(e) {
+//     $('.alert').alert();
 
     let form = document.getElementById("contact")
     try {
@@ -77,8 +77,9 @@ function myAppOnload(e) {
         console.log("There was an error");
     }
 
-}
-const moment = require('moment');
+// }
+// const moment = require('moment');
+const moment = moment;
 const pageViewsKeyName = "pageViews";
 
 function addPageView() {
