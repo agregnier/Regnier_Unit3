@@ -79,7 +79,7 @@
 
 // }
 // const moment = require('moment');
-const moment = moment;
+const moment = assets/js/moment.js;
 const pageViewsKeyName = "pageViews";
 
 function addPageView() {
