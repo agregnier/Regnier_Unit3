@@ -29,11 +29,13 @@
             }
         }
     </style>
-
+    <!-- build css -->
     <link href="build/style.min.css" rel="stylesheet">
 
 </head>
 <body>
+
+<!-- navbar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <a class="navbar-brand" href="#">Cheeseburger Bar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +70,7 @@
     </div>
 </nav>
 
-<main role="main">
+<!-- jumbotron -->
 
     <div class="container jumbotron jumbotron-fluid">
         <div class="container">
@@ -110,6 +112,8 @@
         </div>
     </div>
 
+    <!-- subscribe form -->
+
     <div class="container form">
         <h1 style="text-align: left"> Subscribe here! </h1>
         <form name="RegForm" id="contact" action="https://formspree.io/xgevpgop" method="POST">
@@ -131,7 +135,7 @@
                 There was an issue submitting your form.
             </div>
             <div class="alert alert-danger d-none" id="danger-alert" role="alert">
-                You haven't completed all of the forms correctly! Go back and recheck what you entered.
+                You done messed up. Check what you entered to verify it was correct!
             </div>
         </div>
     </div>
@@ -144,11 +148,7 @@
             aregnier1@luc.edu</a>&middot; <br> <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
 
-
-
-
-</main>
-
+<!-- modal script -->
 <script>
     var modal = document.getElementById("myModal");
     var btn = document.getElementById("myBtn");

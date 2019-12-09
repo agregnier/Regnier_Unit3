@@ -1,7 +1,4 @@
-function myAppOnload(e) {
-    $('.alert').alert();
-
-    let form = document.getElementById("contact")
+let form = document.getElementById("contact")
     try {
         form.addEventListener('submit', e => {
             e.preventDefault();
@@ -106,8 +103,8 @@ function myAppOnload(e) {
 
 //Attempt 1
     function listPageViews(array) {
-        let table = document.getElementById("websiteLogsTable");
-        let tableBody = document.getElementById("logTableBody");
+        let table = document.getElementById("pageviewTable");
+        let tableBody = document.getElementById("pageviewTableBody");
         array.map(item => {
             //creates the elements
             let tr = document.createElement("tr");
@@ -142,11 +139,11 @@ function myAppOnload(e) {
 
 //=============== executes table clear and refreshes page ========================//
 
-    let table_button = document.getElementById('table_clear_button');
+    let table_button = document.getElementById('clear_button');
     table_button.addEventListener("click", function () {
         localStorage.clear();
         window.location.reload();
         window.alert("The cache has been cleared!");
     });
-}
+
 //=============== End of table clear and refresh =================================//
