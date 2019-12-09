@@ -1,5 +1,5 @@
-// function myAppOnload(e) {
-//     $('.alert').alert();
+function myAppOnload(e) {
+    $('.alert').alert();
 
     let form = document.getElementById("contact")
     try {
@@ -60,60 +60,93 @@
         console.log("There was an error");
     }
 
-const moment = require('moment');
-const pageViewsKeyName = "pageViews";
+//=================================Recording and viewing page views=================================//
+    /**
+     * Need to do:
+     * - Add a new page view & timestamp
+     * - list the page views & timestamps
+     */
+    const moment = require('moment');
+    const pageViewsKeyName = "pageViews";
 
-function addPageView() {
-    let pageViews = localStorage.getItem(pageViewsKeyName);
+    /**
+     * Add the current page path + timestamp to the pageviews entry in local storage
+     */
+    function addPageView() {
+        /**
+         * In order to add a page view,
+         * we have to first check if there are any page views set
+         * and if not, then we need to create the array first
+         * afterward, or if the array already existed, we want to append to the array
+         */
+        let pageViews = localStorage.getItem(pageViewsKeyName);
 
-    let arr = [];
-    if (pageViews && pageViews.length > 0) {
-        arr = JSON.parse(pageViews);
+        let arr = [];
+        if (pageViews && pageViews.length > 0) {
+            // get the array stored in local storage at pageViewsKeyName
+            arr = JSON.parse(pageViews);
 
+        }
+        // now we're able to insert an item in the page view data
+        let newPageData = {
+            "path": window.location.pathname,
+            "timestamp": moment().format('MMMM Do YYYY, h:mm:ss a')
+        };
+
+        // now add new page data to the array
+        arr.push(newPageData);
+
+        // finally, we want to update our storage with the most up to date array
+        //Ryan edit.  The array needs to be converted back to a string for storage.
+        localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
     }
-    let newPageData = {
-        "path": window.location.pathname,
-        "timestamp": moment().format('MMMM Do YYYY, h:mm:ss a')
-    };
 
-    arr.push(newPageData);
 
-    localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
-}
+// //===============  Load the internal storage =========================
 
-function listPageViews(array) {
-    let table = document.getElementById("websiteLogsTable");
-    let tableBody = document.getElementById("logTableBody");
-    array.map(item => {
-        //creates the elements
-        let tr = document.createElement("tr");
-        let pageURL = document.createElement("td");
-        let timeStamp = document.createElement("td");
+//Attempt 1
+    function listPageViews(array) {
+        let table = document.getElementById("websiteLogsTable");
+        let tableBody = document.getElementById("logTableBody");
+        array.map(item => {
+            //creates the elements
+            let tr = document.createElement("tr");
+            let pageURL = document.createElement("td");
+            let timeStamp = document.createElement("td");
 
-        pageURL.innerText = item.path;
-        timeStamp.innerText = item.timestamp;
+            //adds values to the tags
+            pageURL.innerText = item.path;
+            timeStamp.innerText = item.timestamp;
 
-        tr.appendChild(pageURL);
-        tr.appendChild(timeStamp);
+            //add the td tags to the TR
+            tr.appendChild(pageURL);
+            tr.appendChild(timeStamp);
 
-        tableBody.appendChild(tr);
-    });
-}
+            //add the TR to the table
+            tableBody.appendChild(tr);
+        });
+    }
 
-document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
+// //============== End of load internal storage =======================
+
+
+    document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
+
 
 //Records the page name and time accessed
-window.onload = addPageView;
+    window.onload = addPageView;
 
 //Access local storage and populate table on table page.
-listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
-console.log(localStorage)
+    listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
+
 
 //=============== executes table clear and refreshes page ========================//
-let table_button = document.getElementById('clear_button');
-table_button.addEventListener("click", function () {
-    localStorage.clear();
-    window.location.reload();
-    window.alert("It is like you were never here...");
-    console.log("cache cleared")
-});
+
+    let table_button = document.getElementById('table_clear_button');
+    table_button.addEventListener("click", function () {
+        localStorage.clear();
+        window.location.reload();
+        window.alert("The cache has been cleared!");
+    });
+}
+//=============== End of table clear and refresh =================================//
