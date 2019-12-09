@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', myAppOnload);
+
 <!-- Form verification -->
 let form = document.getElementById("contact")
 try {
@@ -61,7 +63,7 @@ try {
 
 const moment = require('moment');
 const pageViewsKeyName = "pageViews";
-
+debugger;
 function addPageView() {
     let pageViews = localStorage.getItem(pageViewsKeyName);
     let arr = [];
@@ -96,7 +98,7 @@ function listPageViews(array) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', myAppOnload);
+
 
 window.onload = addPageView;
 
