@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', myAppOnload);
+
 
 <!-- Form verification -->
 let form = document.getElementById("contact")
@@ -98,7 +98,7 @@ function listPageViews(array) {
     });
 }
 
-
+document.addEventListener('DOMContentLoaded', myAppOnload);
 
 window.onload = addPageView;
 
