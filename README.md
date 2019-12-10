@@ -1,10 +1,20 @@
 # Regnier_Unit3
 
+**Here is my Unit 3 Assignment**
+
+I was the only person on my team, but received direct guidance from Prof. Post and Erik as well as received second hand guidance during office hours for Ryan, Alex, and Steven. I also appreciate Michael's secondhand guidance on piazza.
+
+ - My form occurs on subscribe.html
+ - The pageview table occurs on buns.html 
+ - I used modal and tooltip for the bootstrap components. 
+ - I attempted to tidy up my javascript like we discussed in the office hours on monday (12/9) and couldn't figure out a solution that would keep the functionality, so I decided that I should submit a functional but messy solution vice a pretty yet disfuntional product. I did keep you guidance on the solution but //'ed it out.
+ 
+**_References_**
 https://jsfiddle.net/seamusleahy/rxeuaatw/ - Some of the code from app.js is from this site to help with AJAX. Line 23 and below is where I implemented their code. 
 
 https://www.geeksforgeeks.org/form-validation-using-html-javascript/ - I used this site to help me understand and implement form validation
 
-https://www.w3schools.com/howto/howto_css_modals.asp - I used his site to help with my modal and to implement the javascript
+https://www.w3schools.com/howto/howto_css_modals.asp - I used this site to help with my modal and to implement the javascript
 
 Images used:
 https://insightbyseymour.files.wordpress.com/2015/04/people-celebrating-1202x500.jpg
