@@ -4,10 +4,10 @@ try {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        let firstName = document.getElementById("Name");
-        let lastName = document.getElementById("Address");
-        let email = document.getElementById("Email");
-        let calendar = document.getElementById("Phone");
+        let Name = document.getElementById("Name");
+        let Address = document.getElementById("Address");
+        let Email = document.getElementById("Email");
+        let Phone = document.getElementById("Phone");
 
         if (Name.value == "" || Address.value == "" || Email.value == "" || Phone.value == "") {
             document.getElementById("danger-alert").classList.remove("d-none");
